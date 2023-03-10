@@ -29,3 +29,6 @@ Route::prefix('items')->group(function () {
     Route::post('/edit', [App\Http\Controllers\ItemController::class, 'edit']);
     Route::get('/Delete', [App\Http\Controllers\ItemController::class, 'delete']);
 });
+
+//ユーザー管理画面
+    Route::get('/users', [App\Http\Controllers\UserController::class, 'users']);
