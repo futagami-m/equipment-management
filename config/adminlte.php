@@ -226,31 +226,31 @@ return [
 
     'menu' => [
         [
-            'text' => '在庫一覧',
+            'text' => '　在庫一覧',
             'url'  => 'items',
-            'icon' => 'fas fa-gamepad',
+            'icon' => 'fas fa-list',
         ],
 
         [
-            'text' => '注文履歴',
+            'text' => '　注文履歴',
             'url'  => 'order',
-            'icon' => 'fas fa-gamepad',
+            'icon' => 'fas fa-share',
         ],
         [
-            'text' => '仕入れ先一覧',
+            'text' => '　仕入先一覧',
             'url'  => 'orderby',
-            'icon' => 'fas fa-gamepad',
+            'icon' => 'fas fa-book',
         ],
         [
-            'text' => '注文書作成',
+            'text' => '　注文書作成',
             'url'  => 'ordertemplate',
-            'icon' => 'fas fa-gamepad',
+            'icon' => 'fas fa-pen',
         ],
 
         [
-            'text' => 'ユーザー管理',
+            'text' => '　ユーザー管理',
             'url'  => 'users',
-            'icon' => 'fas fa-gamepad',
+            'icon' => 'fas fa-user',
         ],
         // AdminLTEデフォルト
         /*
