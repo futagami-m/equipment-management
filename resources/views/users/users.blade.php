@@ -36,7 +36,7 @@
              管理者@endif</td>
             
             
-            <td><a href="user/edit/{{$value->id}}"><button class="btn btn-info btn-block btn-sm">編集</button></a></td>
+            <td><a href="users/edit/{{$value->id}}"><button class="btn btn-info btn-block btn-sm">編集</button></a></td>
             
         </tr>
         @endforeach

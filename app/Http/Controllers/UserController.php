@@ -21,4 +21,18 @@ class UserController extends Controller
         
         return view('users.users', compact('users'));
     }
+
+    //編集画面表示
+    public function edit(Request $request){
+        
+        $user = User::where('id','=',$request->id)->first();
+        
+        return view('users.edit')->with([
+            'users' => $user,
+        ]);
+        }
+
+
+    
+
 }

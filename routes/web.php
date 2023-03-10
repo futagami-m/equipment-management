@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +32,4 @@ Route::prefix('items')->group(function () {
 
 //ユーザー管理画面
     Route::get('/users', [App\Http\Controllers\UserController::class, 'users']);
+    Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
