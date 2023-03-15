@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => '在庫管理',
+    'title' => '備品在庫管理',
     'title_prefix' => '',
     'title_postfix' => '',
 
