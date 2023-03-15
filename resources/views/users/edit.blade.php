@@ -6,6 +6,7 @@
     <h1>ユーザー情報編集</h1>
 @stop
 
+@section('content')
 <body class="edit">   
  <div class="border border-info round" style="margin:10px auto; padding:20px; width:400px;">
 
@@ -84,11 +85,11 @@
     <div class="form-group">
         <button type="submit" class="btn btn-info btn-block ">編集</button>
     </div>
-    @can('admin-higher')
+    <!-- @can('admin-higher')
     <div class="form-group">
         <a href="/memberDelete/{{$user->id}}"><button type="button" class="btn btn-info btn-block">削除</button>
     </div>
-    @endcan
+    @endcan -->
      <a href="/users" class="btn btn-outline-info" role="button">ユーザー管理に戻る </a>
     
     </form>

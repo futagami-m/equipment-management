@@ -11,7 +11,7 @@
     
 @section('content')
  <body class="users">
-    <div style="width:700px; margin:50px auto; text-align:center;">
+    <div style="width:750px; margin:50px auto; text-align:center;">
     <div>
         <table class="table table-bordered" margin-top=10px;>
       
@@ -21,8 +21,10 @@
             <th style ="width:150px;">名前</th>
             <th style ="width:250px;">メールアドレス</th>
             <th style ="width:150px;">ステータス</th>
+            <!-- <th></th>
+            @can('admin-higher')
             <th></th>
-        
+            @endcan -->
         </tr>
        
         </div>
@@ -34,10 +36,11 @@
             <td>{{$value->email}}</td>
             <td>@if($value->role == 1)
              管理者@endif</td>
-            
-            
+
             <td><a href="users/edit/{{$value->id}}"><button class="btn btn-info btn-block btn-sm">編集</button></a></td>
-            
+            @can('admin-higher')
+            <td><a href="/memberDelete/{{$value->id}}"><button class="btn btn-info btn-block btn-sm">削除</button></a></td>
+            @endcan
         </tr>
         @endforeach
         </div>

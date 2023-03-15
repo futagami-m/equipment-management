@@ -32,4 +32,6 @@ Route::prefix('items')->group(function () {
 
 //ユーザー管理画面
     Route::get('/users', [App\Http\Controllers\UserController::class, 'users']);
-    Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+    Route::get('/users/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+    Route::post('/memberEdit', [App\Http\Controllers\UserController::class, 'memberEdit']);
+    Route::get('/memberDelete/{id}', [UserController::class,'memberDelete']);
