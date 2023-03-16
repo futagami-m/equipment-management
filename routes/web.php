@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use \App\Http\Controllers\ItemController;
+use \App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,17 +23,23 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+//在庫管理
 Route::prefix('items')->group(function () {
     Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::get('/edit', [App\Http\Controllers\ItemController::class, 'edit']);
-    Route::post('/edit', [App\Http\Controllers\ItemController::class, 'edit']);
-    Route::get('/Delete', [App\Http\Controllers\ItemController::class, 'delete']);
+    Route::post('/itemEdit/{item}', [App\Http\Controllers\ItemController::class, 'itemEdit']);
+    Route::get('/delete/{item}', [App\Http\Controllers\ItemController::class, 'delete']);
+    Route::get('/order', [App\Http\Controllers\ItemController::class, 'order']);
 });
 
+
+
+
 //備品検索ツール
-Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('index');

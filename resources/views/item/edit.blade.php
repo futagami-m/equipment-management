@@ -1,13 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', '在庫登録')
+@section('title', '編集画面')
 
 @section('content_header')
-    <h1>備品登録</h1>
+<h1>編集画面</h1>
 @stop
 
 @section('content')
-    <div class="row">
+  
+<div class="row">
         <div class="col-md-10">
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -20,12 +21,12 @@
             @endif
 
             <div class="card card-primary">
-                <form method="POST">
+            <form action="/itemEdit" method="post"> 
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">名前</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                            <input type="text" class="form-control" id="name" name="name" maxlength="100" >
                         </div>
 
                         <div class="form-group">
@@ -53,7 +54,7 @@
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">登録</button>
+                        <button type="submit" class="btn btn-primary">編集</button> <button  class="btn btn-primary">削除</button>
                     </div>
                 </form>
             </div>

@@ -11,9 +11,7 @@
             <div class="form-group d-flex">
                 <select name="type" class="form-select text-muted w-25 bg-light" aria-label="Default select example">
                     <option value="" selected>種別を選択</option>
-                    @foreach(config('pref') as $key => $score)
-                    <option value="{{$key}}">{{ $score }}</option>
-                    @endforeach
+
                 </select>
                 <input type="text" name="keyword"  class="form-control" placeholder="キーワードを入力">
                 <input type="submit" value="検索" class="btn btn-primary">
@@ -68,14 +66,14 @@
                                     <td><div class="card-tools">
                                         <div class="input-group input-group-sm">
                                             <div class="input-group-append">
-                                                <a href="{{ url('items/add') }}" class="btn btn-default">更新</a>
+                                                <a href="{{ url('items/edit') }}" class="btn btn-default">更新</a><a href="{{ url('items/order') }}" class="btn btn-default">注文</a>
                                             </div>
                                         </div>
                                     </td>
                                     <td><div class="card-tools">
                                         <div class="input-group input-group-sm">
                                             <div class="input-group-append">
-                                                <a href="{{ url('items/add') }}" class="btn btn-default">削除</a>
+                                                <a href="{{ url('items/delete') }}" class="btn btn-default">削除</a>
                                             </div>
                                         </div>
                                     </td>        
