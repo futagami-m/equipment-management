@@ -30,8 +30,18 @@ Route::prefix('items')->group(function () {
     Route::get('/Delete', [App\Http\Controllers\ItemController::class, 'delete']);
 });
 
+//備品検索ツール
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('index');
+    Route::post('/search', [App\Http\Controllers\SearchController::class, 'type'])->name('type');
+    Route::get('/detail/{id}', [App\Http\Controllers\SearchController::class, 'detail'])->name('detail');
+
 //ユーザー管理画面
     Route::get('/users', [App\Http\Controllers\UserController::class, 'users']);
     Route::get('/users/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
     Route::post('/memberEdit', [App\Http\Controllers\UserController::class, 'memberEdit']);
     Route::get('/memberDelete/{id}', [UserController::class,'memberDelete']);
+
+});

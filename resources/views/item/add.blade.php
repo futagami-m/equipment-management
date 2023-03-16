@@ -30,8 +30,7 @@
 
                         <div class="form-group">
                             <label for="type">種別</label>
-                            <select type="number" class="form-control" id="type" name="type" placeholder="文房具">
-                            
+                            <select class="form-control" id="type" name="type" placeholder="文房具">                         
                         <option value="" selected disabled></option>
                         @foreach(\App\Models\Item::TYPE as $key => $val)
                             <option value="{{ $key }}">
@@ -40,12 +39,15 @@
                         @endforeach
                     </select>
                         </div>
-                        
+                        <div class="form-group">
+                            <label for="name">在庫数</label>
+                            <input type="number" class="form-control" id="quantity" name="quantity">
+                        </div>
                         
 
 
                         <div class="form-group">
-                            <label for="detail">詳細</label>
+                            <label for="detail">詳細</label></span><small id="passwordHelpInline" class="text-muted">　注文日時や仕入れ先など記入して下さい。</small>
                             <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
                         </div>
                     </div>
