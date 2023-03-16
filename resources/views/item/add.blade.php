@@ -30,8 +30,19 @@
 
                         <div class="form-group">
                             <label for="type">種別</label>
-                            <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
+                            <select type="number" class="form-control" id="type" name="type" placeholder="文房具">
+                            
+                        <option value="" selected disabled></option>
+                        @foreach(\App\Models\Item::TYPE as $key => $val)
+                            <option value="{{ $key }}">
+                            {{ $val['label'] }}
+                            </option>
+                        @endforeach
+                    </select>
                         </div>
+                        
+                        
+
 
                         <div class="form-group">
                             <label for="detail">詳細</label>

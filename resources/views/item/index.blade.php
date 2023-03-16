@@ -15,7 +15,7 @@
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <a href="{{ url('items/add') }}" class="btn btn-default">在庫登録</a>
+                                <a href="{{ url('items/add') }}" class="btn btn-default">新規登録</a>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,10 @@
                                 <th>ID</th>
                                 <th>名前</th>
                                 <th>種別</th>
+                                <th>在庫数</th>
                                 <th>詳細</th>
+                                <th>更新日</th>
+                                <th>更新者</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,7 +39,26 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type }}</td>
+                                    <td>{{ $item->quantity }}</td>
                                     <td>{{ $item->detail }}</td>
+                                    <td>{{$item->updated_at}}</td>
+                                    <td><div class="card-tools">
+                                        <div class="input-group input-group-sm">
+                                            <div class="input-group-append">
+                                                <a href="{{ url('items/add') }}" class="btn btn-default">更新</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><div class="card-tools">
+                                        <div class="input-group input-group-sm">
+                                            <div class="input-group-append">
+                                                <a href="{{ url('items/add') }}" class="btn btn-default">削除</a>
+                                            </div>
+                                        </div>
+                                    </td>        
+                    </div>      
+                                    
+                                    
                                 </tr>
                             @endforeach
                         </tbody>
