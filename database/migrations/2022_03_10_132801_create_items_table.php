@@ -19,8 +19,10 @@ class CreateItemsTable extends Migration
             $table->string('name', 100)->index();
             $table->string('status', 100)->default('active');
             $table->smallInteger('type')->nullable();
+            $table->integer('quantity')->default('0');
             $table->string('detail', 500)->nullable();
             $table->timestamps();
+            $table->string('updated_name', 100)->nullable();
 
             // $table->foreign('user_id')->references('id')->on('users');
         });

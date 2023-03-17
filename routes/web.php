@@ -32,11 +32,13 @@ Route::prefix('items')->group(function () {
     Route::get('/edit/{item}', [App\Http\Controllers\ItemController::class, 'edit']);
     Route::post('/itemEdit', [App\Http\Controllers\ItemController::class, 'itemEdit']);
     Route::get('/delete/{item}', [App\Http\Controllers\ItemController::class, 'delete']);
-    Route::get('/order/{item}', [App\Http\Controllers\ItemController::class, 'order']);
+    
 });
 
+//注文履歴
 
-
+    Route::get('/order/{item}', [App\Http\Controllers\OrderController::class, 'order']);
+    Route::get('/history', [App\Http\Controllers\OrderController::class, 'history']);
 
 //備品検索ツール
     Route::group(['middleware' => 'auth'], function () {
