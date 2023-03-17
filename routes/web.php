@@ -46,6 +46,9 @@ Route::prefix('items')->group(function () {
     Route::post('/search', [App\Http\Controllers\SearchController::class, 'type'])->name('type');
     Route::get('/detail/{id}', [App\Http\Controllers\SearchController::class, 'detail'])->name('detail');
 
+    //注文履歴
+    Route::get('/item/history', [App\Http\Controllers\SearchController::class, 'history']);
+
 //ユーザー管理画面
     Route::get('/users', [App\Http\Controllers\UserController::class, 'users']);
     Route::get('/users/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);

@@ -35,6 +35,7 @@ class ItemController extends Controller
 
         return view('item.index', compact('items'))->with([
             'user' => $user,
+            
         ]);
     }
 

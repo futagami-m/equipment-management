@@ -233,7 +233,7 @@ return [
 
         [
             'text' => '　注文履歴',
-            'url'  => 'order',
+            'url'  => '/item/history',
             'icon' => 'fas fa-share',
         ],
         [
