@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+<input type="hidden" name="id" value="{{$item->id}}">
 <div class="row">
         <div class="col-md-10">
             <div class="card card-primary">
@@ -14,12 +15,16 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">名前</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                            <label for="name">商品名</label><span>{{$item->name}}</span>
+                            <input type="hidden" class="form-control" id="name" name="name" value="{{$item->name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">在庫数</label><span>{{$item->quantity}}</span>
+                            <input type="hidden" class="form-control" id="quantity" name="quantity" value="{{$item->quantity}}">
                         </div>
                         <div class="form-group">
                             <label for="name">注文数</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity">
+                            <input type="number" class="form-control" id="ordered_quantity" name="ordered_quantity">
                         </div>
                         <div class="form-group">
                             <label for="name">仕入先</label>
@@ -31,7 +36,7 @@
                         </div>
                         <div class="form-group">
                             <label for="name">注文者</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity">
+                            <input type="text" class="form-control" id="ordered_name" name="ordered_name">
                         </div>
                     </div>
                 </form>

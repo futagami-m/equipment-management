@@ -5,14 +5,15 @@
 @section('content_header')
 <!-- CSSの読み込み -->
 <link rel="stylesheet" href="/css/custom.css">
+<div class="header">
     <h1>在庫一覧</h1> 
     
     <div class="wrapper m-4" >
         <div class="post-search-form col-md-6">
         <form class="form-inline" action="{{ route('index') }}" method="get" style = "text-align:right;">
             <div class="form-group d-flex">
-                <select name="type" class="form-select text-muted w-25 bg-light" aria-label="Default select example">
-                    <option value="" selected>種別を選択</option>
+                <select name="type" class="form-control text-muted">
+                    <option value="" selected>種別</option>
                     @foreach(\App\Models\Item::TYPE as $key => $val)
                                 <option value="{{ $key }}"
                                 @if ($key == 0) selected @endif>
@@ -28,7 +29,7 @@
         </div>
     </div>
 
-
+</div>
 @stop
 
 @section('content')
@@ -38,10 +39,6 @@
                 <div class="card-header">
                     <h3 class="card-title">在庫一覧</h3>
 
-
-                    
-
-        
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
@@ -76,7 +73,7 @@
                                     <td><div class="card-tools">
                                         <div class="input-group input-group-sm">
                                             <div class="input-group-append">
-                                                <a href="{{ url('items/edit/'.$item->id) }}" class="btn btn-default">更新</a><a href="{{ url('items/order') }}" class="btn btn-default">注文</a>
+                                                <a href="{{ url('items/edit/'.$item->id) }}" class="btn btn-default card1">更新</a><a href="{{ url('items/order/'.$item->id) }}" class="btn btn-default card1">注文</a>
                                             </div>
                                         </div>
                                     </td>

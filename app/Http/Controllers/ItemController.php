@@ -119,10 +119,13 @@ class ItemController extends Controller
 
 //注文画面表示
 
-public function order(Request $request)
+    public function order(Request $request,$id)
     {
-        
-        return view('item.order');
+        $item = Item::where('id','=',$id)->first();
+        return view('item.order')->with([
+            'item' => $item,
+            
+        ]);
     }
     
 }

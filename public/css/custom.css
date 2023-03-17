@@ -1,0 +1,15 @@
+/* 検索画面の書式 */
+
+.header{
+    display: flex;
+
+}
+.d-flex{
+    justify-content: flex-end;
+}
+
+.card1{
+    margin:auto 4px;
+    
+    
+}
