@@ -5,6 +5,8 @@
 @section('content_header')
 <!-- CSSの読み込み -->
 <link rel="stylesheet" href="/css/custom.css">
+
+
 <div class="header">
     <h1>在庫一覧</h1> 
     
@@ -37,7 +39,6 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">在庫一覧</h3>
 
                     <div class="card-tools">
                         <div class="input-group input-group-sm">

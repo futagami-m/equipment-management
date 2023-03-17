@@ -10,6 +10,28 @@ use App\Models\Order;
 
 class OrderController extends Controller
 {
+    public function history(Request $request)
+    {
+       
+
+        // 注文一覧取得
+        $order = Order::all();
+
+        
+        return view('orders.history')->with([
+            'order' => $order,
+            
+        ]);
+    }
+        //削除する
+        public function historyDelete(Request $request){
+            $order = Order::where('id','=',$request->id)->first();           
+            $order->delete();
+            return redirect('orders');
+        }
+
+
+
     //注文画面表示
 
     public function order(Request $request,$id)

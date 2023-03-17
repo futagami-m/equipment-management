@@ -21,10 +21,6 @@
             <th style ="width:150px;">名前</th>
             <th style ="width:250px;">メールアドレス</th>
             <th style ="width:150px;">ステータス</th>
-            <!-- <th></th>
-            @can('admin-higher')
-            <th></th>
-            @endcan -->
         </tr>
        
         </div>

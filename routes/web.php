@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use \App\Http\Controllers\ItemController;
 use \App\Http\Controllers\UserController;
+use \App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,7 @@ Route::prefix('items')->group(function () {
 
 //注文履歴
 Route::prefix('orders')->group(function () {
+    Route::get('/', [App\Http\Controllers\OrderController::class, 'history']);
     Route::get('/order/{item}', [App\Http\Controllers\OrderController::class, 'order']);
     Route::post('/itemOrder', [App\Http\Controllers\OrderController::class, 'itemOrder']);
     Route::get('/history', [App\Http\Controllers\OrderController::class, 'history']);
@@ -50,8 +52,11 @@ Route::prefix('orders')->group(function () {
     Route::post('/search', [App\Http\Controllers\SearchController::class, 'type'])->name('type');
     Route::get('/detail/{id}', [App\Http\Controllers\SearchController::class, 'detail'])->name('detail');
 
+    Route::get('', [App\Http\Controllers\SearchController::class, 'history'])->name('history');
+    Route::post('', [App\Http\Controllers\SearchController::class, 'supplier'])->name('supplier');
+
     //注文履歴
-    Route::get('/item/history', [App\Http\Controllers\SearchController::class, 'history']);
+    Route::get('/historyDelete/{id}', [App\Http\Controllers\OrderController::class, 'historyDelete']);
 
 //ユーザー管理画面
     Route::get('/users', [App\Http\Controllers\UserController::class, 'users']);
