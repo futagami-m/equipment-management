@@ -24,15 +24,18 @@ class ItemController extends Controller
      */
     public function index()
     {
-
+        
 
         // 商品一覧取得
         $items = Item
             ::where('items.status', 'active')
             ->select()
             ->get();
+        $user =  Auth::user();
 
-        return view('item.index', compact('items'));
+        return view('item.index', compact('items'))->with([
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -65,17 +68,23 @@ class ItemController extends Controller
 
     public function edit(Item $item,Request $request)
     {
-        $item = Item::where('id','=',$request->id)->first();
-
+        // dd($item);
+        //ログインしたユーザー名を設定する
+        $user = Auth::user();
         return view('item.edit',compact('item'))
         ->with([
             'item' => $item,
+            'user' => $user,
         ]);
     }
 
 
-    public function itemEdit(Item $item,Request $request)
-    {
+    public function itemEdit(Request $request)
+    { 
+        
+        
+
+        $item = Item::where('id','=',$request->id)->first();
         $detail=isset($request->detail)?$request->detail:'';
         //データ更新
         $item->update([
@@ -84,10 +93,11 @@ class ItemController extends Controller
             'type' => $request->type,
             'quantity'=> $request->quantity,
             'detail' => $detail,
+            'updated_name' => $request->updated_name,
         ]);
 
         //商品一覧画面に戻る
-        return redirect()->route('item.index',['id'=>$item->id]);
+        return redirect('/items');
         }
 
 /**
@@ -96,13 +106,13 @@ class ItemController extends Controller
      * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function delete(Request $request)
+    public function delete(Request $request ,$id)
     {
-        $item = Item::where('id','=',$request->id)->first();
+        $item = Item::where('id','=',$id)->first();
         $item -> delete();
         //
         //在庫一覧画面に戻る
-        return redirect('/index');
+        return redirect('/items');
     }
 
 

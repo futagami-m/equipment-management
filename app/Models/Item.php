@@ -17,6 +17,7 @@ class Item extends Model
         'type',
         'quantity',
         'detail',
+        'updated_name',
     ];
 
     const TYPE = [

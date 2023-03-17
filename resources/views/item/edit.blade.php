@@ -21,41 +21,47 @@
             @endif
 
             <div class="card card-primary">
-            <form action="/itemEdit" method="post"> 
+                <form action="{{ url('/items/itemEdit')}}" method="post"> 
                     @csrf
+                    <input type="hidden" name="id" value="{{$item->id}}">
+                    <input type="hidden" name="updated_name" value="{{$user->name}}">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">名前</label>
-                            <input type="text" class="form-control" id="name" name="name" maxlength="100" >
+                            <input type="text" class="form-control" id="name" name="name" maxlength="100" value="{{$item->name}}">
                         </div>
 
                         <div class="form-group">
                             <label for="type">種別</label>
-                            <select class="form-control" id="type" name="type" placeholder="文房具">                         
-                        <option value="" selected disabled></option>
-                        @foreach(\App\Models\Item::TYPE as $key => $val)
-                            <option value="{{ $key }}">
-                            {{ $val['label'] }}
-                            </option>
-                        @endforeach
-                    </select>
+                            <select class="form-control" id="type" name="type" >                         
+                                @foreach(\App\Models\Item::TYPE as $key => $val)
+                                <option value="{{ $key }}"
+                                @if ($key == $item->type) selected @endif>
+                                {{ $val['label'] }}
+                                
+                                </option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="name">在庫数</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity">
+                            <input type="number" class="form-control" id="quantity" name="quantity" value="{{$item->quantity}}">
                         </div>
                         
 
 
                         <div class="form-group">
-                            <label for="detail">詳細</label></span><small id="passwordHelpInline" class="text-muted">　注文日時や仕入れ先など記入して下さい。</small>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <label for="detail">詳細</label><small id="detailHelpInline" class="text-muted">　注文日時や仕入れ先など記入して下さい。</small>
+                            <input type="text" class="form-control" id="detail" name="detail" value="{{$item->detail}}">
                         </div>
                     </div>
-
+                    
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">編集</button> <button  class="btn btn-primary">削除</button>
+                        <button type="submit" class="btn btn-primary">更新</button> 
                     </div>
+                </form>    
+                <form action="{{ url('/items/delete/'.$item->id) }}">
+                    <button  class="btn btn-danger">削除</button>
                 </form>
             </div>
         </div>
