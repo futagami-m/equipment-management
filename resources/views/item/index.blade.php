@@ -73,7 +73,7 @@
                                     <td><div class="card-tools">
                                         <div class="input-group input-group-sm">
                                             <div class="input-group-append">
-                                                <a href="{{ url('items/edit/'.$item->id) }}" class="btn btn-default card1">更新</a><a href="{{ url('items/order/'.$item->id) }}" class="btn btn-default card1">注文</a>
+                                                <a href="{{ url('items/edit/'.$item->id) }}" class="btn btn-default card1">更新</a><a href="{{ url('orders/order/'.$item->id) }}" class="btn btn-default card1">注文</a>
                                             </div>
                                         </div>
                                     </td>

@@ -36,9 +36,11 @@ Route::prefix('items')->group(function () {
 });
 
 //注文履歴
-
+Route::prefix('orders')->group(function () {
     Route::get('/order/{item}', [App\Http\Controllers\OrderController::class, 'order']);
+    Route::post('/itemOrder', [App\Http\Controllers\OrderController::class, 'itemOrder']);
     Route::get('/history', [App\Http\Controllers\OrderController::class, 'history']);
+});
 
 //備品検索ツール
     Route::group(['middleware' => 'auth'], function () {

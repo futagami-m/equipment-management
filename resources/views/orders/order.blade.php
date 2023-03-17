@@ -7,12 +7,15 @@
 @stop
 
 @section('content')
-<input type="hidden" name="id" value="{{$item->id}}">
+
 <div class="row">
         <div class="col-md-10">
             <div class="card card-primary">
-                <form method="POST">
+                <form action="{{ url('/orders/itemOrder')}}" method="post"> 
                     @csrf
+
+                    <input type="hidden" name="ordered_name" value="{{$user->name}}">
+
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">商品名</label><h3>{{$item->name}}</h3>
@@ -20,7 +23,7 @@
                         </div>
                         <div class="form-group">
                             <label for="name">在庫数</label><h3>　{{$item->quantity}}</h3>
-                            <input type="hidden" class="form-control" id="quantity" name="quantity" value="{{$item->quantity}}">
+    
                         </div>
                         <div class="form-group">
                             <label for="name">注文数</label>
@@ -32,12 +35,15 @@
                         </div>
                         <div class="form-group">
                             <label for="name">納期</label>
-                            <input type="number" class="form-control" id="deadline" name="deadline">
+                            <input type="date" class="form-control" id="deadline" name="deadline">
                         </div>
                         <div class="form-group">
                             <label for="name">注文者</label>
-                            <input type="text" class="form-control" id="ordered_name" name="ordered_name">
+                            <input type="text" class="form-control" id="order_name" name="order_name">
                         </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">注文する</button> 
                     </div>
                 </form>
             </div>
