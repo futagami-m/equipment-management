@@ -59,6 +59,9 @@
                                 <th>詳細</th>
                                 <th>更新日</th>
                                 <th>更新者</th>
+                                <th></th>
+                                <th></th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -97,6 +100,9 @@
             </div>
         </div>
     </div>
+
+    <a class="pagetop" href="#">
+    <div class="pagetop__arrow"></div></a>
 @stop
 
 @section('css')

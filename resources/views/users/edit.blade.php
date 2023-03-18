@@ -7,6 +7,9 @@
 @stop
 
 @section('content')
+<!-- CSSの読み込み -->
+<link rel="stylesheet" href="/css/custom.css">
+
 <body class="edit">   
  <div class="border border-info round" style="margin:10px auto; padding:20px; width:400px;">
 
@@ -70,7 +73,7 @@
     </div>
 
     @can('admin-higher')
-    <div style="text-align:left;">アクセス権限</div>
+    <div style="text-align:left; margin-bottom:15px;">アクセス権限</div>
     <div class="check-box">
     <div class="form-check1">
       <label class="form-check-label">
@@ -83,7 +86,7 @@
     </div>
     @endcan
     <div class="form-group">
-        <button type="submit" class="btn btn-info btn-block ">編集</button>
+        <button type="submit" class="btn btn-info btn-block " style="margin-top:15px;">編集</button>
     </div>
     <!-- @can('admin-higher')
     <div class="form-group">

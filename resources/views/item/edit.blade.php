@@ -56,13 +56,17 @@
                         </div>
                     </div>
                     
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">更新</button> 
-                    </div>
+                    <div class="card-footer block1" style="text-align:center;">
+                        <button type="submit" class="btn btn-primary w-25" style="margin-bottom: 10px;">更新</button> 
+                    
                 </form>    
-                <form action="{{ url('/items/delete/'.$item->id) }}">
-                    <button  class="btn btn-danger">削除</button>
+                    <div>    
+                        <a href="/items" class="btn btn-outline-info btn-sm w-25" role="button">戻る</a>
+                    </div>  
+                <form action="{{ url('/items/delete/'.$item->id) }}" style="text-align:right;">
+                    <button  class="btn btn-danger" >削除</button>
                 </form>
+                </div>
             </div>
         </div>
     </div>

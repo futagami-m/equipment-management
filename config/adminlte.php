@@ -236,16 +236,16 @@ return [
             'url'  => 'orders',
             'icon' => 'fas fa-share',
         ],
-        [
-            'text' => '　仕入先一覧',
-            'url'  => 'orderby',
-            'icon' => 'fas fa-book',
-        ],
-        [
-            'text' => '　注文書作成',
-            'url'  => 'ordertemplate',
-            'icon' => 'fas fa-pen',
-        ],
+        // [
+        //     'text' => '　仕入先一覧',
+        //     'url'  => 'orderby',
+        //     'icon' => 'fas fa-book',
+        // ],
+        // [
+        //     'text' => '　注文書作成',
+        //     'url'  => 'ordertemplate',
+        //     'icon' => 'fas fa-pen',
+        // ],
 
         [
             'text' => '　ユーザー管理',

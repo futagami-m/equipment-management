@@ -60,5 +60,17 @@ class OrderController extends Controller
     }
 
 
+    //更新画面表示
+    public function edit(Request $request)
+    {
+        // dd($item);
+        //更新する注文履歴IDを取得する
+        $order = Order::where('id','=',$request->id)->first();
+        return view('orders.edit',compact('order'))
+        ->with([
+            'order' => $order,
+        
+        ]);
+    }
 
 }

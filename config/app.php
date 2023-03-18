@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', '備品管理システム'),
 
     /*
     |--------------------------------------------------------------------------
@@ -135,6 +135,9 @@ return [
     */
 
     'providers' => [
+        
+        //ソート機能
+        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...

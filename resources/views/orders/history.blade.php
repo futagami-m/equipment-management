@@ -53,6 +53,9 @@
                                 <th>注文者</th>
                                 <th>注文日</th>
                                 <th>登録者</th>
+                                <th></th>
+                                <th></th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -69,7 +72,7 @@
                                     <td><div class="card-tools">
                                         <div class="input-group input-group-sm">
                                             <div class="input-group-append">
-                                                <a href="" class="btn btn-default card1">更新</a>
+                                                <a href="{{ url('orders/edit/'.$value->id) }}" class="btn btn-default">更新</a>
                                             </div>
                                         </div>
                                     </td>
@@ -77,7 +80,7 @@
                                     <td><div class="card-tools">
                                         <div class="input-group input-group-sm">
                                             <div class="input-group-append">
-                                                <a href="/historyDelete/{{$value->id}}" class="btn btn-danger">削除</a>
+                                                <a href="orders/historyDelete/{{$value->id}}" class="btn btn-danger">削除</a>
                                             </div>
                                         </div>
                                     </td>        
@@ -93,6 +96,9 @@
         </div>
     </div>
 
+
+    <a class="pagetop" href="#">
+    <div class="pagetop__arrow"></div></a>
 
 
 
