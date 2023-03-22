@@ -55,9 +55,9 @@
                                 <th>ID</th>
                                 <th>名前</th>
                                 <th>種別</th>
-                                <th>在庫数</th>
+                                <th>@sortablelink('quantity', '在庫数')</th>
                                 <th>詳細</th>
-                                <th>更新日</th>
+                                <th>@sortablelink('date', '更新日')</th>
                                 <th>更新者</th>
                                 <th></th>
                                 <th></th>
@@ -70,7 +70,9 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type_label }}</td>
-                                    <td>{{ $item->quantity}}</td>
+                                    
+                                    <td @if($item->quantity < 10) style= "color:red;" @endif>{{$item->quantity}}</td>
+                                    
                                     <td>{{ $item->detail }}</td>
                                     <td>{{$item->updated_at}}</td>
                                     <td>{{$item->updated_name}}</td>

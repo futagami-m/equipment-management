@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Item extends Model
 {
@@ -10,15 +11,23 @@ class Item extends Model
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
-     */
+     * 
+     *///ソース機能
+    use Sortable;
+
     protected $fillable = [
         'user_id',
         'name',
         'type',
         'quantity',
         'detail',
+        'updated_at',
         'updated_name',
     ];
+
+    public $sortable = ['type','quantity','updated_at'];
+
+
 
     const TYPE = [
         1 => [ 'label' => '文房具'],
@@ -47,6 +56,8 @@ class Item extends Model
         return $types[$this->type];
 
     }
+
+    
 
 
 

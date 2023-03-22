@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
 use App\Models\Order;
 
+
 class OrderController extends Controller
 {
     public function history(Request $request)
@@ -15,14 +16,35 @@ class OrderController extends Controller
        
 
         // 注文一覧取得
-        $order = Order::all();
+        $orders = Order::sortable()
+        ->where('status', '=', 'active')
+        ->orderBy('created_at','desc')
+        ->get();
 
+        //セレクトボックス
+        $selectType = $request->input('type');
+        //検索欄
+        $keyword = $request->input('keyword');
+
+        if(!empty($selectType)) {
+            $orders->where('type', '=', "$selectType");
+        }
+
+        if(!empty($keyword)) {
+            $orders->where('supplier', 'LIKE', "%{$keyword}%")
+                   ->Where('name', 'LIKE', "%{$keyword}%");
+        }
         
-        return view('orders.history')->with([
-            'order' => $order,
+
+        return view('orders.history',compact('keyword'))->with([
+            'order' => $orders,
             
         ]);
     }
+
+
+
+
         //削除する
         public function historyDelete(Request $request){
             $order = Order::where('id','=',$request->id)->first();           
@@ -49,6 +71,7 @@ class OrderController extends Controller
         Order::create([
             'name' => $request->name,
             'order_quantity' => $request->order_quantity,
+            'type' => $request->type,
             'supplier' => $request->supplier,
             'deadline' => $request->deadline,
             'order_name' => $request->order_name,

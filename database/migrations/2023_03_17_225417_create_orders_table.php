@@ -16,6 +16,8 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100)->index();
+            $table->string('status', 100)->default('active');
+            $table->smallInteger('type')->nullable();
             $table->integer('order_quantity')->default('0');
             $table->string('supplier', 500)->nullable();
             $table->date('deadline')->nullable();

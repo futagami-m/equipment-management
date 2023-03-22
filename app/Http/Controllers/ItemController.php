@@ -23,12 +23,10 @@ class ItemController extends Controller
      * 商品一覧
      */
     public function index()
-    {
-        
-
+    {   
         // 商品一覧取得
         $items = Item
-            ::where('items.status', 'active')
+            ::sortable()->where('items.status', 'active')
             ->select()
             ->get();
         $user =  Auth::user();

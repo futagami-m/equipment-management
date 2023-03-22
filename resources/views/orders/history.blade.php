@@ -11,11 +11,17 @@
 
     <div class="wrapper m-4" >
         <div class="post-search-form col-md-6">
-        <form class="form-inline" action="{{ route('index') }}" method="get" style = "text-align:right;">
+        <form class="form-inline" action="{{ route('history') }}" method="get" style = "text-align:right;">
             <div class="form-group d-flex">
                 <select name="type" class="form-control text-muted">
-                    <option value="" selected>仕入先</option>
-                    
+                    <option value="" selected>種別</option>
+                    @foreach(\App\Models\Item::TYPE as $key => $val)
+                                <option value="{{ $key }}"
+                                @if ($key == 0) selected @endif>
+                                {{ $val['label'] }}
+                                
+                                </option>
+                                @endforeach
                 </select>
                 <input type="text" name="keyword"  class="form-control" placeholder="キーワードを入力">
                 <input type="submit" value="検索" class="btn btn-primary">
@@ -49,9 +55,9 @@
                                 <th>名前</th>
                                 <th>注文数</th>
                                 <th>仕入先</th>
-                                <th>納期</th>
+                                <th>@sortablelink('deadline', '納期')</th>
                                 <th>注文者</th>
-                                <th>注文日</th>
+                                <th>@sortablelink('created_at', '注文日')</th>
                                 <th>登録者</th>
                                 <th></th>
                                 <th></th>

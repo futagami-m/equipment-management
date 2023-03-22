@@ -38,7 +38,8 @@ Route::prefix('items')->group(function () {
 
 //注文履歴
 Route::prefix('orders')->group(function () {
-    Route::get('/', [App\Http\Controllers\OrderController::class, 'history']);
+    Route::get('/', [App\Http\Controllers\OrderController::class, 'history'])->name('history');
+    Route::post('/', [App\Http\Controllers\OrderController::class, 'type'])->name('type');
 
     Route::get('/order/{item}', [App\Http\Controllers\OrderController::class, 'order']);
     Route::post('/itemOrder', [App\Http\Controllers\OrderController::class, 'itemOrder']);
@@ -57,8 +58,8 @@ Route::prefix('orders')->group(function () {
     Route::post('/search', [App\Http\Controllers\SearchController::class, 'type'])->name('type');
     Route::get('/detail/{id}', [App\Http\Controllers\SearchController::class, 'detail'])->name('detail');
 
-    // Route::get('', [App\Http\Controllers\SearchController::class, 'history'])->name('history');
-    // Route::post('', [App\Http\Controllers\SearchController::class, 'supplier'])->name('supplier');
+    
+    
 
     
     

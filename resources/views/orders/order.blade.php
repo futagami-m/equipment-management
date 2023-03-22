@@ -15,6 +15,7 @@
                     @csrf
 
                     <input type="hidden" name="ordered_name" value="{{$user->name}}">
+                    <input type="hidden"  id="type" name="type" value="{{$item->type}}">
 
                     <div class="card-body">
                         <div class="form-group">
