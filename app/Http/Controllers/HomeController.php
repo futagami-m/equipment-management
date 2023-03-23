@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Item;
+use App\Models\Order;
+
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $items= Item::where('quantity','<','10')->orderBy('updated_at','desc')->get();
+        $user = Auth::user();
+        $order= Order::orderBy('created_at','desc')->get();
+        
+        return view('home',compact("items","user","order"));
+
+        
     }
 }

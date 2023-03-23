@@ -26,7 +26,7 @@ class Order extends Model
         'ordered_name',
         'updated_at'
     ];
-    public $sortable = ['deadline','updated_at','supplier'];
+    public $sortable = ['deadline','updated_at'];
 
 
     const TYPE = [
