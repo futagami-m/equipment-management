@@ -43,6 +43,9 @@ Route::prefix('orders')->group(function () {
 
     Route::get('/order/{item}', [App\Http\Controllers\OrderController::class, 'order']);
     Route::post('/itemOrder', [App\Http\Controllers\OrderController::class, 'itemOrder']);
+    //新規注文
+    Route::get('/add', [App\Http\Controllers\OrderController::class, 'addOrder']);
+    Route::post('/add', [App\Http\Controllers\OrderController::class, 'addOrder']);
     
 
     Route::get('/edit/{id}', [App\Http\Controllers\OrderController::class, 'edit']);

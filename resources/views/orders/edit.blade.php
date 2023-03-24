@@ -31,7 +31,7 @@
 
                     <div class="card-body">
                          <div class="form-group">
-                            <label for="name">商品名</label><h3>{{$order->name}}</h3>
+                            <label for="name">品名</label><h3>{{$order->name}}</h3>
                         </div>
                         <div class="form-group">
                             <label for="name">注文数</label>

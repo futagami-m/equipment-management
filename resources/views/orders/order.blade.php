@@ -11,7 +11,7 @@
 <div class="row">
         <div class="col-md-10">
             <div class="card card-primary">
-                <form action="{{ url('/orders/itemOrder')}}" method="post"> 
+                <form action="{{ url('/orders/addOrder')}}" method="post"> 
                     @csrf
 
                     <input type="hidden" name="ordered_name" value="{{$user->name}}">
@@ -19,7 +19,7 @@
 
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">商品名</label><h3>{{$item->name}}</h3>
+                            <label for="name">品名</label><h3>{{$item->name}}</h3>
                             <input type="hidden" class="form-control" id="name" name="name" value="{{$item->name}}">
                         </div>
                         <div class="form-group">

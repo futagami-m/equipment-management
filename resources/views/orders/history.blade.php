@@ -43,7 +43,7 @@
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <a href="" class="btn btn-default">新規注文</a>
+                                <a href="orders/add" class="btn btn-default">新規注文</a>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                     <table class="table table-hover text-nowrap">
                         <thead>
                             <tr>
-                                <th>名前</th>
+                                <th>品名</th>
                                 <th>注文数</th>
                                 <th>仕入先</th>
                                 <th>@sortablelink('deadline', '納期')</th>

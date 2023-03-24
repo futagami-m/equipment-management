@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '在庫登録')
+@section('title', '新規注文')
 
 @section('content_header')
-    <h1>備品登録</h1>
+    <h1>新規注文</h1>
 @stop
 
 @section('content')
@@ -22,6 +22,8 @@
             <div class="card card-primary">
                 <form method="POST">
                     @csrf
+
+                    <input type="hidden" name="ordered_name" value="{{$user->name}}">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">品名</label>
@@ -40,20 +42,31 @@
                     </select>
                         </div>
                         <div class="form-group">
-                            <label for="name">在庫数</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity">
+                            <label for="name">注文数</label>
+                            <input type="number" class="form-control" id="order_quantity" name="order_quantity">
                         </div>
                         
 
 
                         <div class="form-group">
-                            <label for="detail">詳細</label></span><small id="passwordHelpInline" class="text-muted">　注文日時や仕入れ先など記入して下さい。</small>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <label for="detail">仕入先</label>
+                            <input type="text" class="form-control" id="supplier" name="supplier" placeholder="モノタロウ">
                         </div>
+
+                        <div class="form-group">
+                            <label for="date">納期</label>
+                            <input type="date" class="form-control" id="deadline" name="deadline">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">注文者</label>
+                            <input type="text" class="form-control" id="order_name" name="order_name">
+                        </div>
+
+
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">登録</button>
+                        <button type="submit" class="btn btn-primary">注文</button>
                     </div>
                 </form>
             </div>

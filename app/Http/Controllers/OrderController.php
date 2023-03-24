@@ -61,6 +61,9 @@ class OrderController extends Controller
             
         ]);
     }
+
+
+
     //注文追加
     public function itemOrder(Request $request){
         // 注文する（登録）
@@ -77,6 +80,41 @@ class OrderController extends Controller
         ]);
 
         return redirect('/items');
+    }
+
+
+    /**
+     * 新規注文登録
+     */
+    public function addOrder(Request $request)
+    {
+        $user = Auth::user();
+        // POSTリクエストのとき
+        if ($request->isMethod('post')) {
+            // バリデーション
+            $this->validate($request, [
+                'name' => 'required|max:100',
+            ]);
+
+            // 注文登録
+            Order::create([
+                
+                
+                'name' => $request->name,
+                'type' => $request->type,
+                'order_quantity' => $request->order_quantity,
+                'supplier' => $request->supplier,
+                'deadline' => $request->deadline,
+                'order_name' => $request->order_name,
+                'ordered_name' => $request->ordered_name,
+
+            ]);
+
+            return redirect('/orders');
+            
+        }
+
+        return view('orders.add')->with(['user'=> $user]);
     }
 
 

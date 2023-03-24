@@ -27,7 +27,7 @@
                     <input type="hidden" name="updated_name" value="{{$user->name}}">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">名前</label>
+                            <label for="name">品名</label>
                             <input type="text" class="form-control" id="name" name="name" maxlength="100" value="{{$item->name}}">
                         </div>
 
