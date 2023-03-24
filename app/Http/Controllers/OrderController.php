@@ -13,27 +13,23 @@ class OrderController extends Controller
 {
     public function history(Request $request)
     {
-       
-
-        // 注文一覧取得
-        $orders = Order::sortable()
-        ->where('status', '=', 'active')
-        ->orderBy('created_at','desc')
-        ->get();
-
         //セレクトボックス
         $selectType = $request->input('type');
         //検索欄
         $keyword = $request->input('keyword');
 
-        if(!empty($selectType)) {
-            $orders->where('type', '=', "$selectType");
-        }
+        // 注文一覧取得
+        $orders = Order::sortable()
+        ->where('status', '=', 'active')
+        ->where('type','=',$selectType)
+        ->where('name','LIKE',"%{$keyword}%")
+        ->orWhere('supplier','LIKE',"%{$keyword}%")
+        ->orWhere('order_name','LIKE',"%{$keyword}%")
+        ->orWhere('ordered_name','LIKE',"%{$keyword}%")
+        ->orderBy('created_at','desc')
+        ->get();
 
-        if(!empty($keyword)) {
-            $orders->where('supplier', 'LIKE', "%{$keyword}%")
-                   ->Where('name', 'LIKE', "%{$keyword}%");
-        }
+        
         
 
         return view('orders.history',compact('keyword'))->with([
@@ -68,6 +64,7 @@ class OrderController extends Controller
     //注文追加
     public function itemOrder(Request $request){
         // 注文する（登録）
+    
         Order::create([
             'name' => $request->name,
             'order_quantity' => $request->order_quantity,
