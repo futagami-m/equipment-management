@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', '注文編集画面')
+@section('title', '注文更新画面')
 
 @section('content_header')
 
 <div class="header1"></div>
-<h1>注文編集画面</h1>
+<h1>更新画面</h1>
 @stop
 
 @section('content')
@@ -51,13 +51,13 @@
                         
                     </div>
                     
-                    <div class="card-footer block1" style="text-align:center;">
-                        <button type="submit" class="btn btn-primary w-25" style="margin-bottom: 10px;">更新</button>                       
+                    <div class="card-footer block1" style="text-align:left;">
+                        <button type="submit" class="btn btn-primary" style="margin-bottom: 10px;">更新</button>                       
                 </form>    
 
                 
                     <div>    
-                        <a href="/orders" class="btn btn-outline-info btn-sm w-25" role="button">戻る</a>
+                        <a href="/orders" class="btn btn-outline-info " role="button">戻る</a>
                     </div>    
                 <form action="{{ url('/orders/historyDelete/'.$order->id) }}" style="text-align:right;">
                         <button  class="btn btn-danger">削除</button>
