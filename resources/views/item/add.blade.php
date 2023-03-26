@@ -25,7 +25,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">品名</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="ペン">
                         </div>
 
                         <div class="form-group">
@@ -41,20 +41,24 @@
                         </div>
                         <div class="form-group">
                             <label for="name">在庫数</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity">
+                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="20">
                         </div>
                         
 
 
                         <div class="form-group">
                             <label for="detail">詳細</label></span><small id="passwordHelpInline" class="text-muted">　注文日時や仕入れ先など記入して下さい。</small>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <input type="text" class="form-control" id="detail" name="detail" placeholder="モノタロウ">
                         </div>
                     </div>
 
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">登録</button>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary" style="margin-bottom:10px;">登録</button>
+                    
+                        <div>    
+                        <a href="/items" class="btn btn-outline-info " role="button">戻る</a>
                     </div>
+                    </div>  
                 </form>
             </div>
         </div>

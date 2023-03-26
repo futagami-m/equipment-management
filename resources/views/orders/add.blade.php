@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">品名</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="ペン">
                         </div>
 
                         <div class="form-group">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-group">
                             <label for="name">注文数</label>
-                            <input type="number" class="form-control" id="order_quantity" name="order_quantity">
+                            <input type="number" class="form-control" id="order_quantity" name="order_quantity" placeholder="20">
                         </div>
                         
 
@@ -59,14 +59,17 @@
                         </div>
                         <div class="form-group">
                             <label for="name">注文者</label>
-                            <input type="text" class="form-control" id="order_name" name="order_name">
+                            <input type="text" class="form-control" id="order_name" name="order_name" placeholder="二神さん">
                         </div>
 
 
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">注文</button>
+                        <button type="submit" class="btn btn-primary" style="margin-bottom:10px;">注文</button>
+                        <div>
+                        <a href="/orders" class="btn btn-outline-info " role="button">戻る</a>
+                        </div>
                     </div>
                 </form>
             </div>

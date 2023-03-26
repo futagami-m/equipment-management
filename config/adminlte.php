@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => '備品在庫管理',
+    'title' => '備品管理システム',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>在庫管理</b>',
+    'logo' => '<b>備品管理システム</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => '在庫管理',
+    'logo_img_alt' => '備品管理システム',
 
     /*
     |--------------------------------------------------------------------------
