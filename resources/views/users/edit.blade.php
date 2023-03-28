@@ -15,7 +15,7 @@
 
  <div style="width:320px; margin:60px auto; text-align:center;">
  
-    <h4 class="name">アカウント編集 ID:{{$user->id}}</h4>
+    <h4 class="name">アカウント ID:{{$user->id}}</h4>
     @can('admin-higher')<p>(管理者画面)</p>@endcan
     <form action="/memberEdit" method="post">
     @csrf
