@@ -46,7 +46,7 @@ class ItemController extends Controller
         if ($request->isMethod('post')) {
             // バリデーション
             $this->validate($request, [
-                'name' => 'required|max:100',
+                'name' => 'required|unique:items|max:100',
                 'quantity' => 'required',
                 'detail' => 'max:500',
                 
@@ -84,7 +84,11 @@ class ItemController extends Controller
 
     public function itemEdit(Request $request)
     { 
-        
+         // バリデーション
+         $this->validate($request, [
+            'name' => 'required|max:100',
+            'quantity' => 'required',
+            'detail' => 'required|max:500',]);
         
 
         $item = Item::where('id','=',$request->id)->first();
