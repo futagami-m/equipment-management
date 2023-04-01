@@ -157,6 +157,10 @@ return [
                     'email' => 'メールアドレス',
                     'name' => '品名',
                     'quantity' => '在庫数',
-                    'detail' => '詳細',],
+                    'detail' => '詳細',
+                    'supplier' => '仕入先',
+                    'order_quantity' => '注文数',
+                    'order_name' => '注文者',
+                    ]
 
 ];

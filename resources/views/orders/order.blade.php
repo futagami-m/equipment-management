@@ -11,7 +11,16 @@
 <div class="row">
         <div class="col-md-10">
             <div class="card card-primary">
-                <form action="{{ url('/orders/addOrder')}}" method="post"> 
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                       @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                       @endforeach
+                    </ul>
+                </div>
+            @endif
+                <form action="{{ url('/orders/itemOrder')}}" method="post"> 
                     @csrf
 
                     <input type="hidden" name="ordered_name" value="{{$user->name}}">

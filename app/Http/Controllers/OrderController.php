@@ -68,6 +68,15 @@ class OrderController extends Controller
     //注文追加
     public function itemOrder(Request $request){
         // 注文する（登録）
+
+        $this->validate($request, [
+            
+            'supplier' => 'max:500',
+            'order_quantity' => 'required',
+            'order_name' => 'required|max:100',
+            
+        
+        ]);
     
         Order::create([
             'name' => $request->name,
