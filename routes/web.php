@@ -47,7 +47,7 @@ Route::prefix('orders')->group(function () {
     Route::get('/add', [App\Http\Controllers\OrderController::class, 'addOrder']);
     Route::post('/add', [App\Http\Controllers\OrderController::class, 'addOrder']);
     
-
+    //注文更新
     Route::get('/edit/{id}', [App\Http\Controllers\OrderController::class, 'edit']);
     Route::post('/orderEdit', [App\Http\Controllers\OrderController::class, 'orderEdit']);
     Route::get('/historyDelete/{id}', [App\Http\Controllers\OrderController::class, 'historyDelete']);

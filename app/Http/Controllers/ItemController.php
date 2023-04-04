@@ -38,7 +38,7 @@ class ItemController extends Controller
     }
 
     /**
-     * 商品登録
+     * 備品登録
      */
     public function add(Request $request)
     {
@@ -53,7 +53,7 @@ class ItemController extends Controller
             
             ]);
 
-            // 商品登録
+            // 備品登録
             Item::create([
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
@@ -103,7 +103,7 @@ class ItemController extends Controller
             'updated_name' => $request->updated_name,
         ]);
 
-        //商品一覧画面に戻る
+        //在庫一覧画面に戻る
         return redirect('/items');
         }
 

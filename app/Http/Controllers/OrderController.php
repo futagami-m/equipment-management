@@ -104,6 +104,9 @@ class OrderController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
+                'order_quantity' => 'required|max:100',
+                'supplier' => 'required|max:100',
+                
             ]);
 
             // 注文登録
@@ -139,6 +142,27 @@ class OrderController extends Controller
             'order' => $order,
         
         ]);
+    }
+    public function orderEdit(Request $request)
+    { 
+         // バリデーション
+         $this->validate($request, [
+            
+            'order_quantity' => 'required|max:100',
+            'supplier' => 'required|max:500',]);
+        
+
+        $order = Order::where('id','=',$request->id)->first();
+        
+        //データ更新
+        $order->update([
+            
+            'order_quantity'=> $request->order_quantity,
+            'supplier' => $request->supplier,
+            'deadline' => $request->deadline,
+        ]);
+         //注文履歴画面に戻る
+         return redirect('/orders');
     }
 
 }
