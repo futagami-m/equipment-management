@@ -20,18 +20,22 @@ class OrderController extends Controller
         $keyword = $request->input('keyword');
 
         // 注文一覧取得
-        $orders = Order::sortable()
-        ->where('status', '=', 'active')
-        ->where('type','=',$selectType)
-        ->where('name','LIKE',"%{$keyword}%")
-        ->orWhere('supplier','LIKE',"%{$keyword}%")
-        ->orWhere('order_name','LIKE',"%{$keyword}%")
-        ->orWhere('ordered_name','LIKE',"%{$keyword}%")
-        ->orderBy('created_at','desc')
-        ->get();
+        $query = Order::sortable()
+        ->where('status', '=', 'active');
 
+        if(!empty($selectType)) {
+            $query->where('type', '=', "$selectType");
+        }
+        if(!empty($keyword)) {
+            $query->where('name', 'LIKE', "%{$keyword}%")
+            ->orWhere('supplier','LIKE',"%{$keyword}%")
+            ->orWhere('order_name','LIKE',"%{$keyword}%")
+            ->orWhere('ordered_name','LIKE',"%{$keyword}%");
+        }
         
-        
+       
+        $orders = $query->orderBy('created_at','desc')
+        ->get();
 
         return view('orders.history',compact('keyword'))->with([
             'order' => $orders,
