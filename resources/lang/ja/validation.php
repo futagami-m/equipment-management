@@ -156,11 +156,13 @@ return [
     'attributes' => ['password' => 'パスワード',
                     'email' => 'メールアドレス',
                     'name' => '品名',
+                    'name1' => '名前',
                     'quantity' => '在庫数',
                     'detail' => '詳細',
                     'supplier' => '仕入先',
                     'order_quantity' => '注文数',
                     'order_name' => '注文者',
+                    'confirm_password' => 'パスワード確認',
                     ]
 
 ];

@@ -26,10 +26,10 @@
     <input type="hidden" value="1" name = "type">
         <div style="text-align:left;">名前</div>    
         <div class="form-group">
-            <input class="form-control" type="text" name="name" value="{{$user->name}}">
+            <input class="form-control" type="text" name="name1" value="{{$user->name}}">
         </div>
-        @if ($errors->has('name'))
-        <p class="text-danger">{{$errors->first('name')}}</p>
+        @if ($errors->has('name1'))
+        <p class="text-danger">{{$errors->first('name1')}}</p>
         @endif    
         <div style="text-align:left;">メールアドレス</div>
         <div class="form-group">

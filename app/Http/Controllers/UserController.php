@@ -41,7 +41,7 @@ class UserController extends Controller
         if($request->type == 1){
         $request->validate([
         
-        'name'=>['required'],
+        'name1'=>['required'],
         'email'=>['required','email'],
         'password'=>['required','string', 'min:8'],
         'confirm_password' => ['required', 'same:password'],   
@@ -50,7 +50,7 @@ class UserController extends Controller
         } else{
             $request->validate([
         
-                'name'=>['required'],
+                'name1'=>['required'],
                 'email'=>['required','email'],
                 'role'=>['required'],
             ]);
