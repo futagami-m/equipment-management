@@ -52,7 +52,7 @@
                     <table class="table table-hover text-nowrap">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                
                                 <th>品名</th>
                                 <th>種別</th>
                                 <th>@sortablelink('quantity', '在庫数')</th>
@@ -67,13 +67,13 @@
                         <tbody>
                             @foreach ($items as $item)
                                 <tr>
-                                    <td>{{ $item->id }}</td>
+                                    
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type_label }}</td>
                                     
                                     <td @if($item->quantity < 10) style= "color:red;" @endif>{{$item->quantity}}</td>
                                     
-                                    <td>{{ $item->detail }}</td>
+                                    <td><a style="color:black;" class="d-inline-block" data-bs-toggle="tooltip" title="{{$item->detail}}">{{ Str::limit($item->detail, 10, '...') }}</a></td>
                                     <td>{{$item->updated_at}}</td>
                                     <td>{{$item->updated_name}}</td>
                                     <td><div class="card-tools">

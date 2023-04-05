@@ -69,7 +69,7 @@
                                 <tr>
                                     <td>{{ $value->name }}</td>
                                     <td>{{ $value->order_quantity}}</td>
-                                    <td>{{ $value->supplier }}</td>
+                                    <td><a style="color:black;" class="d-inline-block" data-bs-toggle="tooltip" title="{{$value->supplier}}">{{ Str::limit($value->supplier, 10, '...') }}</a></td>
                                     <td>{{ $value->deadline }}</td>
                                     <td>{{ $value->order_name }}</td>
                                     <td>{{ $value->created_at}}</td>
