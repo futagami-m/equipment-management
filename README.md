@@ -23,7 +23,7 @@
 　Laravel 8.83
 
 ### 設計書
-[設計書ページへ]()
+[設計書ページへ](https://drive.google.com/drive/folders/1-qkYP1NqDALewe1VSWC6qw_VzK3wYCKe?usp=sharing)
 ### システム閲覧
 [アプリケーションのページへ](https://equipment-management.herokuapp.com)
 
