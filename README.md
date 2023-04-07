@@ -1,35 +1,35 @@
-## 商品管理システム
+## 備品管理システム
 
-### 環境構築手順
+### 概要
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLかPostgreSQLのデータベース作成（名前：item_management）  
-  ローカルでMAMPを使用しているのであれば、MySQL推奨
-* .env にデータベース接続情報追加
+このシステムでは、事務用品などの備品の在庫管理を行うことができます。
+備品の在庫を登録や編集、削除を行うことができ、注文履歴を作成することができます。また、検索や絞り込みで目的のデータを素早く確認することができます。ユーザー管理も操作が簡単で、管理者機能でユーザー情報の編集制限をすることが可能です。
+
+
+### 主な機能
+* ログイン・ログアウト機能
+* 通知画面(ホーム画面)
+* 在庫一覧
+* 備品新規登録、更新、削除、注文機能
+* 備品検索機能、ソート機能
+* 注文履歴画面
+* 注文データ登録、編集、削除機能
+* 注文データ検索機能、ソート機能
+* ユーザー管理機能（アクセス制限付き）
+
+### 開発環境
+　PHP 8.0.
+　MySQL 5.7
+　Laravel 8.83
+
+### 設計書
+[設計書ページへ]()
+### システム閲覧
+[アプリケーションのページへ](https://equipment-management.herokuapp.com)
+
+#### テストアカウント情報
 ```
-例）
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=item_management
-DB_USERNAME=root
-DB_PASSWORD=root
+メールアドレス:kanri1@admin
+パスワード:admin1234
 ```
-* APP_KEY生成
-```
-$ php artisan key:generate
-```
-* Composerインストール
-```
-$ composer install
-```
-* フロント環境構築
-```
-$ npm install
-$ npm run dev
-```
-* マイグレーション
-```
-$ php artisan migrate
-```
+
